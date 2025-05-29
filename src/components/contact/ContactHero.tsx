@@ -64,10 +64,10 @@ const ContactHero = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-1 text-secondary-900">Phone</h3>
                   <a
-                    href="tel:+17327638486"
+                    href="tel:+13135481214"
                     className="text-secondary-700 hover:text-primary-600 transition-colors"
                   >
-                    (732) 763-8486
+                    (313) 548-1214
                   </a>
                 </div>
               </div>
