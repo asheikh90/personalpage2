@@ -1,34 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { FiArrowDown } from 'react-icons/fi';
+import { FiArrowDown, FiArrowRight } from 'react-icons/fi';
 
 const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent"></div>
+      {/* Enhanced animated background */}
+      <div className="animated-bg"></div>
       
-      {/* Animated background elements */}
+      {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-primary/5"
+            className="absolute rounded-full bg-gradient-to-br from-primary/5 to-secondary/5"
             style={{
-              width: Math.random() * 300 + 50,
-              height: Math.random() * 300 + 50,
+              width: Math.random() * 300 + 100,
+              height: Math.random() * 300 + 100,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
+              filter: 'blur(40px)',
             }}
             animate={{
               y: [0, Math.random() * 100 - 50],
               x: [0, Math.random() * 100 - 50],
+              opacity: [0.4, 0.7, 0.4],
             }}
             transition={{
               repeat: Infinity,
               repeatType: "reverse",
-              duration: Math.random() * 10 + 10,
+              duration: Math.random() * 10 + 15,
             }}
           />
         ))}
@@ -41,8 +43,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-lg md:text-xl font-medium text-primary mb-4">
-              Consultant • Strategist • Multi-Business Owner
+            <h2 className="text-lg md:text-xl font-medium mb-4 inline-flex items-center">
+              <span className="h-px w-8 bg-primary mr-3"></span>
+              <span className="text-primary">Consultant • Strategist • Multi-Business Owner</span>
             </h2>
           </motion.div>
 
@@ -51,8 +54,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6">
-              Empowering <span className="gradient-text">Business Growth</span> Through Strategic Vision
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-8 leading-tight">
+              Empowering <span className="gradient-text">Business Growth</span> Through <span className="text-highlight">Strategic Vision</span>
             </h1>
           </motion.div>
 
@@ -61,7 +64,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg md:text-xl text-light-300 mb-8">
+            <p className="text-lg md:text-xl text-light-300 mb-10 leading-relaxed max-w-2xl">
               Building and scaling businesses from the ground up with a focus on systems, 
               automation, and community empowerment.
             </p>
@@ -71,10 +74,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-5"
           >
             <Link to="contact" smooth={true} duration={500} offset={-80}>
-              <button className="btn-primary">Get in Touch</button>
+              <button className="btn-primary flex items-center">
+                <span>Get in Touch</span>
+                <FiArrowRight className="ml-2" />
+              </button>
             </Link>
             <Link to="projects" smooth={true} duration={500} offset={-80}>
               <button className="btn-outline">View Projects</button>
@@ -83,14 +89,16 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <motion.div 
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
         <Link to="about" smooth={true} duration={500} offset={-80} className="cursor-pointer">
-          <FiArrowDown className="text-2xl text-primary" />
+          <div className="p-3 rounded-full border border-primary/30 bg-dark-300/50 backdrop-blur-sm hover:bg-primary/10 transition-all duration-300">
+            <FiArrowDown className="text-xl text-primary" />
+          </div>
         </Link>
       </motion.div>
     </section>

@@ -17,43 +17,154 @@ body {
   overflow-x: hidden;
 }
 
+/* Enhanced gradient text with more vibrant colors */
 .gradient-text {
-  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary;
+  background-size: 200% 100%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-20 md:py-28;
 }
 
 .container-custom {
-  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  @apply container mx-auto px-5 sm:px-8 lg:px-12 max-w-7xl;
 }
 
+/* Enhanced nav link with smoother animation */
 .nav-link {
-  @apply relative text-light-100 hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  @apply relative text-light-100 hover:text-primary transition-colors duration-300;
 }
 
+.nav-link::after {
+  @apply absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-primary to-secondary transition-all duration-300 content-[''];
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Enhanced buttons with subtle glow effect */
 .btn-primary {
-  @apply px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-opacity-90 transition-all duration-300 inline-block;
+  @apply px-7 py-3 bg-primary text-white font-medium rounded-md transition-all duration-300 inline-block relative overflow-hidden shadow-md;
+  box-shadow: 0 4px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  @apply transform -translate-y-1;
+  box-shadow: 0 8px 25px -5px rgba(99, 102, 241, 0.6);
+}
+
+.btn-primary::before {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-primary:hover::before {
+  @apply opacity-10;
 }
 
 .btn-outline {
-  @apply px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:bg-opacity-10 transition-all duration-300 inline-block;
+  @apply px-7 py-3 border-2 border-primary text-primary font-medium rounded-md transition-all duration-300 inline-block relative overflow-hidden;
 }
 
+.btn-outline:hover {
+  @apply bg-primary bg-opacity-10 transform -translate-y-1;
+  box-shadow: 0 4px 15px -5px rgba(99, 102, 241, 0.4);
+}
+
+/* Enhanced card with better hover effects */
 .card {
-  @apply bg-dark-100 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10;
+  @apply bg-dark-100 rounded-xl p-8 transition-all duration-300 border border-gray-800;
+  box-shadow: 0 4px 20px -12px rgba(0, 0, 0, 0.5);
 }
 
+.card:hover {
+  @apply border-primary/30;
+  box-shadow: 0 8px 30px -12px rgba(99, 102, 241, 0.3);
+}
+
+/* Enhanced project card with more dynamic hover effect */
 .project-card {
-  @apply relative overflow-hidden rounded-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20;
+  @apply relative overflow-hidden rounded-xl transition-all duration-500 border border-gray-800;
+  box-shadow: 0 4px 20px -12px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover {
+  @apply scale-[1.02] border-primary/30;
+  box-shadow: 0 15px 30px -10px rgba(99, 102, 241, 0.3);
 }
 
 .project-card::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-t from-dark-300 via-transparent to-transparent opacity-80 z-10;
+  @apply absolute inset-0 bg-gradient-to-t from-dark-300 via-transparent to-transparent opacity-80 z-10 transition-opacity duration-300;
 }
 
+.project-card:hover::before {
+  @apply opacity-90;
+}
+
+/* Enhanced input field with better focus states */
 .input-field {
-  @apply w-full bg-dark-100 border border-gray-700 rounded-md px-4 py-3 text-light-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300;
+  @apply w-full bg-dark-100 border-2 border-gray-700 rounded-md px-4 py-3 text-light-100 transition-all duration-300;
+}
+
+.input-field:focus {
+  @apply outline-none ring-2 ring-primary border-transparent;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+/* New glass effect for sections */
+.glass-panel {
+  @apply bg-dark-200/80 backdrop-blur-lg border border-gray-800 rounded-xl;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}
+
+/* New animated background */
+.animated-bg {
+  @apply absolute inset-0 overflow-hidden -z-10;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+}
+
+.animated-bg::before {
+  content: '';
+  @apply absolute w-full h-full;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.15) 0%, transparent 20%);
+  animation: pulse 15s ease infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* New section divider */
+.section-divider {
+  @apply relative h-24 overflow-hidden;
+}
+
+.section-divider::after {
+  content: '';
+  @apply absolute w-full h-24 bg-dark-300;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+}
+
+/* New text highlight */
+.text-highlight {
+  @apply relative inline-block;
+}
+
+.text-highlight::before {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-[30%] bg-primary/20 -z-10 transform -skew-x-12;
 }
