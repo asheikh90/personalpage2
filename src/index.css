@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #6366f1;
-  --secondary: #10b981;
-  --dark: #111827;
-  --dark-lighter: #1f2937;
-  --dark-lightest: #374151;
+  color-scheme: dark;
 }
 
 html {
@@ -15,54 +11,49 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--dark);
-  color: #f9fafb;
+  @apply bg-dark-300 text-light-100 font-sans;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-size: 200% 200%;
-  animation: gradient 8s ease infinite;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
 }
 
-.gradient-border {
-  position: relative;
+.section-padding {
+  @apply py-16 md:py-24;
 }
 
-.gradient-border::before {
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.nav-link {
+  @apply relative text-light-100 hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-opacity-90 transition-all duration-300 inline-block;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:bg-opacity-10 transition-all duration-300 inline-block;
+}
+
+.card {
+  @apply bg-dark-100 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/20;
+}
+
+.project-card::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  @apply absolute inset-0 bg-gradient-to-t from-dark-300 via-transparent to-transparent opacity-80 z-10;
 }
 
-.service-card {
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+.input-field {
+  @apply w-full bg-dark-100 border border-gray-700 rounded-md px-4 py-3 text-light-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300;
 }
