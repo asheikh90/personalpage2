@@ -5,11 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@formspree/react':
-    specifier: ^2.4.4
-    version: 2.5.5(react-dom@18.3.1)(react@18.3.1)
   framer-motion:
-    specifier: ^10.15.1
+    specifier: ^10.12.16
     version: 10.18.0(react-dom@18.3.1)(react@18.3.1)
   react:
     specifier: ^18.2.0
@@ -20,43 +17,37 @@ dependencies:
   react-icons:
     specifier: ^4.10.1
     version: 4.12.0(react@18.3.1)
-  react-intersection-observer:
-    specifier: ^9.5.2
-    version: 9.16.0(react-dom@18.3.1)(react@18.3.1)
-  react-router-dom:
-    specifier: ^6.15.0
-    version: 6.30.1(react-dom@18.3.1)(react@18.3.1)
   react-scroll:
     specifier: ^1.8.9
     version: 1.9.3(react-dom@18.3.1)(react@18.3.1)
 
 devDependencies:
   '@types/react':
-    specifier: ^18.2.20
+    specifier: ^18.2.14
     version: 18.3.23
   '@types/react-dom':
-    specifier: ^18.2.7
+    specifier: ^18.2.6
     version: 18.3.7(@types/react@18.3.23)
   '@types/react-scroll':
     specifier: ^1.8.7
     version: 1.8.10
   '@vitejs/plugin-react':
-    specifier: ^4.0.4
+    specifier: ^4.0.1
     version: 4.5.0(vite@4.5.14)
   autoprefixer:
-    specifier: ^10.4.15
+    specifier: ^10.4.14
     version: 10.4.21(postcss@8.5.3)
   postcss:
-    specifier: ^8.4.28
+    specifier: ^8.4.24
     version: 8.5.3
   tailwindcss:
-    specifier: ^3.3.3
+    specifier: ^3.3.2
     version: 3.4.17
   typescript:
-    specifier: ^5.1.6
+    specifier: ^5.0.2
     version: 5.8.3
   vite:
-    specifier: ^4.4.9
+    specifier: ^4.4.0
     version: 4.5.14
 
 packages:
@@ -457,25 +448,6 @@ packages:
     dev: true
     optional: true
 
-  /@formspree/core@3.0.4:
-    resolution: {integrity: sha512-VpdvQfSbcD4smrk1Gb5RJPBYBWmiNVWkiZs6ddu7afnu/OjKGlIPVo42LNNS5ht2joabcTCiyOZgATjqOdqs+g==}
-    dependencies:
-      '@stripe/stripe-js': 1.54.2
-    dev: false
-
-  /@formspree/react@2.5.5(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-VmfFW2f/aSMu023Wt84xGlDquRjbbJbJWtTFie9RI70k/EuVJ41Noj1kGHtYVajry9B1pEMyAh4PovdcdCYAHQ==}
-    peerDependencies:
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-    dependencies:
-      '@formspree/core': 3.0.4
-      '@stripe/react-stripe-js': 1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1)(react@18.3.1)
-      '@stripe/stripe-js': 1.54.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -546,31 +518,9 @@ packages:
     dev: true
     optional: true
 
-  /@remix-run/router@1.23.0:
-    resolution: {integrity: sha512-O3rHJzAQKamUz1fvE0Qaw0xSFqsA/yafi2iqeE0pvdFtCO1viYx8QL6f3Ln/aCCTLxs68SLf0KPM9eSeM8yBnA==}
-    engines: {node: '>=14.0.0'}
-    dev: false
-
   /@rolldown/pluginutils@1.0.0-beta.9:
     resolution: {integrity: sha512-e9MeMtVWo186sgvFFJOPGy7/d2j2mZhLJIdVW0C/xDluuOvymEATqz6zKsP0ZmXGzQtqlyjz5sC1sYQUoJG98w==}
     dev: true
-
-  /@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
-    peerDependencies:
-      '@stripe/stripe-js': ^1.44.1
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@stripe/stripe-js': 1.54.2
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
-  /@stripe/stripe-js@1.54.2:
-    resolution: {integrity: sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==}
-    dev: false
 
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -725,7 +675,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001718
-      electron-to-chromium: 1.5.160
+      electron-to-chromium: 1.5.161
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.0)
     dev: true
@@ -817,8 +767,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.5.160:
-    resolution: {integrity: sha512-8yQk54/CoCQT8GX3zuxqPBwMAQuIr6dWI/qO8Aah/JAZwB5XmCbEElsqb1n4pzc2vpkTdfc/kbyNPJOjswfbgg==}
+  /electron-to-chromium@1.5.161:
+    resolution: {integrity: sha512-hwtetwfKNZo/UlwHIVBlKZVdy7o8bIZxxKs0Mv/ROPiQQQmDgdm5a+KvKtBsxM8ZjFzTaCeLoodZ8jiBE3o9rA==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -1276,19 +1226,6 @@ packages:
       react: 18.3.1
     dev: false
 
-  /react-intersection-observer@9.16.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-w9nJSEp+DrW9KmQmeWHQyfaP6b03v+TdXynaoA964Wxt7mdR3An11z4NNCQgL4gKSK7y1ver2Fq+JKH6CWEzUA==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -1297,29 +1234,6 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /react-router-dom@6.30.1(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-llKsgOkZdbPU1Eg3zK8lCn+sjD9wMRZZPuzmdWWX5SUs8OFkN5HnFVC0u5KMeMaC9aoancFI/KoLuKPqN+hxHw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.23.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.30.1(react@18.3.1)
-    dev: false
-
-  /react-router@6.30.1(react@18.3.1):
-    resolution: {integrity: sha512-X1m21aEmxGXqENEPG3T6u0Th7g0aS4ZmoNynhbs+Cn+q+QGTLt+d5IQ2bHAXKzKcxGJjxACpVbnYQSCRcfxHlQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.23.0
-      react: 18.3.1
-    dev: false
 
   /react-scroll@1.9.3(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==}
